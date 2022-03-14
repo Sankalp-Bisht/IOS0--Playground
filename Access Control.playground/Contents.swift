@@ -36,7 +36,7 @@ private var IOSemploye = OneMgEmployee(name: "Sahil", department: "IOS", id: 21)
 
 
 //private func printPrivateVariable(IOSintern: OneMgIntern){
-//    
+//
 //    print(IOSintern)
 //}
 //
