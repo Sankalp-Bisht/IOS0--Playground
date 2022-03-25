@@ -4,22 +4,19 @@ import Darwin
 //var greeting = "Hello, playground"
 
 
-class employee{
+class Employee{
     var name: String
     var workExp: Int?
-    var availabel: IOSdeveloper?
+    
     
     init(name:String,workExp:Int?){
         self.name = name
         self.workExp = workExp
-        
-//        self.dept = oneMgEmployee(name: name, workExp: workExp,department: "IOS")
-        
-        self.availabel = IOSdeveloper(available: true)
+ 
     }
     
     func printavailablity(){
-        print(availabel!)
+        print("YEs")
     }
     
     deinit{
@@ -28,41 +25,39 @@ class employee{
     }
 }
 
-class oneMgEmployee{
-//    var detail: employee?
-    var department:String
-    
-    init(name:String,workExp:Int?,department:String){
-//        self.detail = employee(name: name, workExp: workExp)
-        self.department = department
-    }
-    
-    deinit{
-        print("OneMgEmployee deinit called")
-    }
-}
+//class OneMgEmployee{
+//    var detail: Employee?
+//    var department:String
+//
+//    init(name:String,workExp:Int?,department:String){
+//        self.detail = Employee(name: name, workExp: workExp)
+//        self.department = department
+//    }
+//
+//    deinit{
+//        print("OneMgEmployee deinit called")
+//    }
+//}
 
 class IOSdeveloper{
     var available: Bool?
-    weak var employee:oneMgEmployee?
-    init(available: Bool?){
+    var otherDetail: Employee?
+    init(available: Bool?, _employee: Employee){
         self.available = available
-        self.employee = oneMgEmployee(name: "Default Name", workExp: 0, department: "IOS" )
+        self.otherDetail = _employee
+        
     }
     
     func printfunc(){
-        print(employee!)
+        print("Function called")
     }
     deinit{
         print("IOSDEveloper deinit called")
     }
 }
 
-
-
-print("Before1")
-
-var iosdeveloper1 = IOSdeveloper(available: true)
+var employee = Employee(name: "Sankalp", workExp: 8)
+var iosdeveloper1 = IOSdeveloper(available: true,_employee: employee)
 var iosdeveloper2 = iosdeveloper1
 
 //iosdeveloper2 = nil
