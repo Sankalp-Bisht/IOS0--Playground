@@ -62,7 +62,8 @@ var iosdeveloper2 = iosdeveloper1
 
 //iosdeveloper2 = nil
 
-print(iosdeveloper2)
+print(iosdeveloper2.otherDetail?.name)
 //iosdeveloper1 = nil
 
 print("After")
+
